@@ -38,7 +38,7 @@ def initialize(connection):
             team_number STRING,
             team_name STRING,
             team_robot STRING,
-            team_organisation STRING,
+            team_organization STRING,
             team_city STRING,
             team_region STRING,
             team_country STRING,
@@ -172,7 +172,7 @@ def insert(table, data, connection):
         for team in data:
             cursor.execute(
                 """
-                INSERT OR REPLACE INTO team (team_id, team_number, team_name, team_robot, team_organisation, team_city, team_region, team_country, team_grade, team_program)
+                INSERT OR REPLACE INTO team (team_id, team_number, team_name, team_robot, team_organization, team_city, team_region, team_country, team_grade, team_program)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (team["id"], team["number"], team["team_name"], team["robot_name"], team["organization"], team["location"]["city"], team["location"]["region"], team["location"]["country"], team["grade"], team["program"]["id"])
             )
@@ -284,7 +284,7 @@ def teamPointEvent(team, event, cursor):
     return cursor.fetchone()[0]
 
 # Get the number of matches a team has played across a season
-def teamMatchesTotal(team, cursor):
+def teamMatchTotal(team, cursor):
     cursor.execute(
         f"""
         SELECT COUNT(*) AS matches_played
