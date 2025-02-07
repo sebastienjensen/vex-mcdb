@@ -24,6 +24,6 @@ def fetch(config, target, params):
             break
 
         page += 1
-        time.sleep(page)
+        time.sleep(1 + (page * 0.1))
     
     return output
