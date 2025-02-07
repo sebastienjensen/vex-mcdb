@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MCDb for VEX Robotics</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#000" />
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <p id="title">MCDb</p>
+                <div>
+                    <button id="theme" class="button">THEME</button>
+                </div>
+            </div>
+            <div class="card">
+                <p>Event and match selection</p>
+            </div>
+            <div class="team-cards">
+                <div div="red1" class="team-card card-red">
+                    <p id="red1-number" class="label label-red">0000A</p>
+                    <p id="red1-name" class="value-name">Team Name</p>
+                    <p id="red1-org" class="value-desc desc-top bold">Organization</p>
+                    <p id="red1-city" class="value-desc desc-bottom desc-top">City</p>
+                </div>
+                <div id="red2" class="team-card card-red">
+                    <p id="red2-number" class="label label-red">0000B</p>
+                    <p id="red2-name" class="value-name">Team Name</p>
+                    <p id="red2-org" class="value-desc desc-top bold">Organization</p>
+                    <p id="red2-city" class="value-desc desc-bottom desc-top">City</p>
+                </div>
+                <div id="blue1" class="team-card card-blue">
+                    <p id="blue1-number" class="label label-blue">0000C</p>
+                    <p id="blue1-name" class="value-name">Team Name</p>
+                    <p id="blue1-org" class="value-desc desc-top bold">Organization</p>
+                    <p id="blue1-city" class="value-desc desc-bottom desc-top">City</p>
+                </div>
+                <div id="id2" class="team-card card-blue">
+                    <p id="blue1-number" class="label label-blue">0000D</p>
+                    <p id="blue1-name" class="value-name">Team Name</p>
+                    <p id="blue1-org" class="value-desc desc-top bold">Organization</p>
+                    <p id="blue1-city" class="value-desc desc-bottom desc-top">City</p>
+                </div>
+                <div id="iq1" class="team-card card-blue">
+                    <p id="iq1-number" class="label label-blue">0000E</p>
+                    <p id="iq1-name" class="value-name">Team Name</p>
+                    <p id="iq1-org" class="value-desc desc-top bold">Organization</p>
+                    <p id="iq1-city" class="value-desc desc-bottom desc-top">City</p>
+                </div>
+                <div id="iq2" class="team-card card-blue">
+                    <p id="iq2-number" class="label label-blue">0000F</p>
+                    <p id="iq2-name" class="value-name">Team Name</p>
+                    <p id="iq2-org" class="value-desc desc-top bold">Organization</p>
+                    <p id="iq2-city" class="value-desc desc-bottom desc-top">City</p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="team-cards">
+                <div id="red1-match-season" class="team-card card-red">
+                    <p id="red1-match-season-number" class="label label-red">0000A</p>
+                    <p id="red1-match-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red1-match-event" class="team-card card-red">
+                    <p id="red1-match-event-number" class="label label-red">0000A</p>
+                    <p id="red1-match-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red1-point-season" class="team-card card-red">
+                    <p id="red1-point-season-number" class="label label-red">0000A</p>
+                    <p id="red1-point-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red1-point-event" class="team-card card-red">
+                    <p id="red1-point-event-number" class="label label-red">0000A</p>
+                    <p id="red1-point-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red1-point-avg-season" class="team-card card-red">
+                    <p id="red1-point-avg-season-number" class="label label-red">0000A</p>
+                    <p id="red1-point-avg-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red1-point-avg-event" class="team-card card-red">
+                    <p id="red1-point-avg-event-number" class="label label-red">0000A</p>
+                    <p id="red1-point-avg-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red1-win-season" class="team-card card-red">
+                    <p id="red1-win-season-number" class="label label-red">0000A</p>
+                    <p id="red1-win-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red1-win-event" class="team-card card-red">
+                    <p id="red1-win-event-number" class="label label-red">0000A</p>
+                    <p id="red1-win-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red1-win-rate-season" class="team-card card-red">
+                    <p id="red1-point-season-number" class="label label-red">0000A</p>
+                    <p id="red1-point-season-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red1-win-rate-event" class="team-card card-red">
+                    <p id="red1-win-rate-event-number" class="label label-red">0000A</p>
+                    <p id="red1-win-rate-event-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red1-hs-season" class="team-card card-red">
+                    <p id="red1-hs-season-number" class="label label-red">0000A</p>
+                    <p id="red1-hs-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p class="value-desc">THIS SEASON</p>
+                    <p id="red1-hs-season-match" class="value-desc">MATCH NAME</p>
+                    <p id="red1-hs-season-event" class="value-desc desc-bottom desc-top">EVENT NAME</p>
+                </div>
+                <div id="red1-hs-event" class="team-card card-red">
+                    <p id="red1-hs-event-number" class="label label-red">0000A</p>
+                    <p id="red1-hs-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p id="red1-hs-event-match" class="value-desc">MATCH NAME</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red1-award-ex" class="team-card card-red">
+                    <p id="red1-award-ex-name" class="label label-red">0000A</p>
+                    <p id="red1-award-ex-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">EXCELLENCE</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="red1-award-tc" class="team-card card-red">
+                    <p id="red1-award-tc-name" class="label label-red">0000A</p>
+                    <p id="red1-award-tc-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">TOURNAMENT CHAMPION</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="red1-award-rs" class="team-card card-red">
+                    <p id="red1-award-rs-name" class="label label-red">0000A</p>
+                    <p id="red1-award-rs-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">ROBOT SKILLS</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="red2-match-season" class="team-card card-red">
+                    <p id="red2-match-season-number" class="label label-red">0000B</p>
+                    <p id="red2-match-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red2-match-event" class="team-card card-red">
+                    <p id="red2-match-event-number" class="label label-red">0000B</p>
+                    <p id="red2-match-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red2-point-season" class="team-card card-red">
+                    <p id="red2-point-season-number" class="label label-red">0000B</p>
+                    <p id="red2-point-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red2-point-event" class="team-card card-red">
+                    <p id="red2-point-event-number" class="label label-red">0000B</p>
+                    <p id="red2-point-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red2-point-avg-season" class="team-card card-red">
+                    <p id="red2-point-avg-season-number" class="label label-red">0000B</p>
+                    <p id="red2-point-avg-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red2-point-avg-event" class="team-card card-red">
+                    <p id="red2-point-avg-event-number" class="label label-red">0000B</p>
+                    <p id="red2-point-avg-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red2-win-season" class="team-card card-red">
+                    <p id="red2-win-season-number" class="label label-red">0000B</p>
+                    <p id="red2-win-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red2-win-event" class="team-card card-red">
+                    <p id="red2-win-event-number" class="label label-red">0000B</p>
+                    <p id="red2-win-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red2-win-rate-season" class="team-card card-red">
+                    <p id="red2-point-season-number" class="label label-red">0000B</p>
+                    <p id="red2-point-season-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="red2-win-rate-event" class="team-card card-red">
+                    <p id="red2-win-rate-event-number" class="label label-red">0000B</p>
+                    <p id="red2-win-rate-event-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red2-hs-season" class="team-card card-red">
+                    <p id="red2-hs-season-number" class="label label-red">0000B</p>
+                    <p id="red2-hs-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p class="value-desc">THIS SEASON</p>
+                    <p id="red2-hs-season-match" class="value-desc">MATCH NAME</p>
+                    <p id="red2-hs-season-event" class="value-desc desc-bottom desc-top">EVENT NAME</p>
+                </div>
+                <div id="red2-hs-event" class="team-card card-red">
+                    <p id="red2-hs-event-number" class="label label-red">0000B</p>
+                    <p id="red2-hs-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p id="red2-hs-event-match" class="value-desc">MATCH NAME</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="red2-award-ex" class="team-card card-red">
+                    <p id="red2-award-ex-name" class="label label-red">0000B</p>
+                    <p id="red2-award-ex-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">EXCELLENCE</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="red2-award-tc" class="team-card card-red">
+                    <p id="red2-award-tc-name" class="label label-red">0000B</p>
+                    <p id="red2-award-tc-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">TOURNAMENT CHAMPION</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="red2-award-rs" class="team-card card-red">
+                    <p id="red2-award-rs-name" class="label label-red">0000B</p>
+                    <p id="red2-award-rs-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">ROBOT SKILLS</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="blue1-match-season" class="team-card card-blue">
+                    <p id="blue1-match-season-number" class="label label-blue">0000C</p>
+                    <p id="blue1-match-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue1-match-event" class="team-card card-blue">
+                    <p id="blue1-match-event-number" class="label label-blue">0000C</p>
+                    <p id="blue1-match-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue1-point-season" class="team-card card-blue">
+                    <p id="blue1-point-season-number" class="label label-blue">0000C</p>
+                    <p id="blue1-point-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue1-point-event" class="team-card card-blue">
+                    <p id="blue1-point-event-number" class="label label-blue">0000C</p>
+                    <p id="blue1-point-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue1-point-avg-season" class="team-card card-blue">
+                    <p id="blue1-point-avg-season-number" class="label label-blue">0000C</p>
+                    <p id="blue1-point-avg-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue1-point-avg-event" class="team-card card-blue">
+                    <p id="blue1-point-avg-event-number" class="label label-blue">0000C</p>
+                    <p id="blue1-point-avg-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue1-win-season" class="team-card card-blue">
+                    <p id="blue1-win-season-number" class="label label-blue">0000C</p>
+                    <p id="blue1-win-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue1-win-event" class="team-card card-blue">
+                    <p id="blue1-win-event-number" class="label label-blue">0000C</p>
+                    <p id="blue1-win-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue1-win-rate-season" class="team-card card-blue">
+                    <p id="blue1-point-season-number" class="label label-blue">0000C</p>
+                    <p id="blue1-point-season-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue1-win-rate-event" class="team-card card-blue">
+                    <p id="blue1-win-rate-event-number" class="label label-blue">0000C</p>
+                    <p id="blue1-win-rate-event-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue1-hs-season" class="team-card card-blue">
+                    <p id="blue1-hs-season-number" class="label label-blue">0000C</p>
+                    <p id="blue1-hs-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p class="value-desc">THIS SEASON</p>
+                    <p id="blue1-hs-season-match" class="value-desc">MATCH NAME</p>
+                    <p id="blue1-hs-season-event" class="value-desc desc-bottom desc-top">EVENT NAME</p>
+                </div>
+                <div id="blue1-hs-event" class="team-card card-blue">
+                    <p id="blue1-hs-event-number" class="label label-blue">0000C</p>
+                    <p id="blue1-hs-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p id="blue1-hs-event-match" class="value-desc">MATCH NAME</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue1-award-ex" class="team-card card-blue">
+                    <p id="blue1-award-ex-name" class="label label-blue">0000C</p>
+                    <p id="blue1-award-ex-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">EXCELLENCE</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="blue1-award-tc" class="team-card card-blue">
+                    <p id="blue1-award-tc-name" class="label label-blue">0000C</p>
+                    <p id="blue1-award-tc-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">TOURNAMENT CHAMPION</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="blue1-award-rs" class="team-card card-blue">
+                    <p id="blue1-award-rs-name" class="label label-blue">0000C</p>
+                    <p id="blue1-award-rs-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">ROBOT SKILLS</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="blue2-match-season" class="team-card card-blue">
+                    <p id="blue2-match-season-number" class="label label-blue">0000D</p>
+                    <p id="blue2-match-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue2-match-event" class="team-card card-blue">
+                    <p id="blue2-match-event-number" class="label label-blue">0000D</p>
+                    <p id="blue2-match-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue2-point-season" class="team-card card-blue">
+                    <p id="blue2-point-season-number" class="label label-blue">0000D</p>
+                    <p id="blue2-point-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue2-point-event" class="team-card card-blue">
+                    <p id="blue2-point-event-number" class="label label-blue">0000D</p>
+                    <p id="blue2-point-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue2-point-avg-season" class="team-card card-blue">
+                    <p id="blue2-point-avg-season-number" class="label label-blue">0000D</p>
+                    <p id="blue2-point-avg-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue2-point-avg-event" class="team-card card-blue">
+                    <p id="blue2-point-avg-event-number" class="label label-blue">0000D</p>
+                    <p id="blue2-point-avg-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue2-win-season" class="team-card card-blue">
+                    <p id="blue2-win-season-number" class="label label-blue">0000D</p>
+                    <p id="blue2-win-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue2-win-event" class="team-card card-blue">
+                    <p id="blue2-win-event-number" class="label label-blue">0000D</p>
+                    <p id="blue2-win-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue2-win-rate-season" class="team-card card-blue">
+                    <p id="blue2-point-season-number" class="label label-blue">0000D</p>
+                    <p id="blue2-point-season-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="blue2-win-rate-event" class="team-card card-blue">
+                    <p id="blue2-win-rate-event-number" class="label label-blue">0000D</p>
+                    <p id="blue2-win-rate-event-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue2-hs-season" class="team-card card-blue">
+                    <p id="blue2-hs-season-number" class="label label-blue">0000D</p>
+                    <p id="blue2-hs-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p class="value-desc">THIS SEASON</p>
+                    <p id="blue2-hs-season-match" class="value-desc">MATCH NAME</p>
+                    <p id="blue2-hs-season-event" class="value-desc desc-bottom desc-top">EVENT NAME</p>
+                </div>
+                <div id="blue2-hs-event" class="team-card card-blue">
+                    <p id="blue2-hs-event-number" class="label label-blue">0000D</p>
+                    <p id="blue2-hs-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p id="blue2-hs-event-match" class="value-desc">MATCH NAME</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="blue2-award-ex" class="team-card card-blue">
+                    <p id="blue2-award-ex-name" class="label label-blue">0000D</p>
+                    <p id="blue2-award-ex-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">EXCELLENCE</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="blue2-award-tc" class="team-card card-blue">
+                    <p id="blue2-award-tc-name" class="label label-blue">0000D</p>
+                    <p id="blue2-award-tc-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">TOURNAMENT CHAMPION</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="blue2-award-rs" class="team-card card-blue">
+                    <p id="blue2-award-rs-name" class="label label-blue">0000D</p>
+                    <p id="blue2-award-rs-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">ROBOT SKILLS</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="iq1-match-season" class="team-card card-blue">
+                    <p id="iq1-match-season-number" class="label label-blue">0000E</p>
+                    <p id="iq1-match-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq1-match-event" class="team-card card-blue">
+                    <p id="iq1-match-event-number" class="label label-blue">0000E</p>
+                    <p id="iq1-match-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq1-point-season" class="team-card card-blue">
+                    <p id="iq1-point-season-number" class="label label-blue">0000E</p>
+                    <p id="iq1-point-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq1-point-event" class="team-card card-blue">
+                    <p id="iq1-point-event-number" class="label label-blue">0000E</p>
+                    <p id="iq1-point-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq1-point-avg-season" class="team-card card-blue">
+                    <p id="iq1-point-avg-season-number" class="label label-blue">0000E</p>
+                    <p id="iq1-point-avg-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq1-point-avg-event" class="team-card card-blue">
+                    <p id="iq1-point-avg-event-number" class="label label-blue">0000E</p>
+                    <p id="iq1-point-avg-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq1-win-season" class="team-card card-blue">
+                    <p id="iq1-win-season-number" class="label label-blue">0000E</p>
+                    <p id="iq1-win-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq1-win-event" class="team-card card-blue">
+                    <p id="iq1-win-event-number" class="label label-blue">0000E</p>
+                    <p id="iq1-win-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq1-win-rate-season" class="team-card card-blue">
+                    <p id="iq1-point-season-number" class="label label-blue">0000E</p>
+                    <p id="iq1-point-season-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq1-win-rate-event" class="team-card card-blue">
+                    <p id="iq1-win-rate-event-number" class="label label-blue">0000E</p>
+                    <p id="iq1-win-rate-event-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq1-hs-season" class="team-card card-blue">
+                    <p id="iq1-hs-season-number" class="label label-blue">0000E</p>
+                    <p id="iq1-hs-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p class="value-desc">THIS SEASON</p>
+                    <p id="iq1-hs-season-match" class="value-desc">MATCH NAME</p>
+                    <p id="iq1-hs-season-event" class="value-desc desc-bottom desc-top">EVENT NAME</p>
+                </div>
+                <div id="iq1-hs-event" class="team-card card-blue">
+                    <p id="iq1-hs-event-number" class="label label-blue">0000E</p>
+                    <p id="iq1-hs-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p id="iq1-hs-event-match" class="value-desc">MATCH NAME</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq1-award-ex" class="team-card card-blue">
+                    <p id="iq1-award-ex-name" class="label label-blue">0000E</p>
+                    <p id="iq1-award-ex-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">EXCELLENCE</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="iq1-award-tc" class="team-card card-blue">
+                    <p id="iq1-award-tc-name" class="label label-blue">0000E</p>
+                    <p id="iq1-award-tc-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">TOURNAMENT CHAMPION</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="iq1-award-rs" class="team-card card-blue">
+                    <p id="iq1-award-rs-name" class="label label-blue">0000E</p>
+                    <p id="iq1-award-rs-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">ROBOT SKILLS</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="iq2-match-season" class="team-card card-blue">
+                    <p id="iq2-match-season-number" class="label label-blue">0000F</p>
+                    <p id="iq2-match-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq2-match-event" class="team-card card-blue">
+                    <p id="iq2-match-event-number" class="label label-blue">0000F</p>
+                    <p id="iq2-match-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">MATCHES</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq2-point-season" class="team-card card-blue">
+                    <p id="iq2-point-season-number" class="label label-blue">0000F</p>
+                    <p id="iq2-point-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq2-point-event" class="team-card card-blue">
+                    <p id="iq2-point-event-number" class="label label-blue">0000F</p>
+                    <p id="iq2-point-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq2-point-avg-season" class="team-card card-blue">
+                    <p id="iq2-point-avg-season-number" class="label label-blue">0000F</p>
+                    <p id="iq2-point-avg-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq2-point-avg-event" class="team-card card-blue">
+                    <p id="iq2-point-avg-event-number" class="label label-blue">0000F</p>
+                    <p id="iq2-point-avg-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">AVERAGE POINTS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq2-win-season" class="team-card card-blue">
+                    <p id="iq2-win-season-number" class="label label-blue">0000F</p>
+                    <p id="iq2-win-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq2-win-event" class="team-card card-blue">
+                    <p id="iq2-win-event-number" class="label label-blue">0000F</p>
+                    <p id="iq2-win-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">WINS</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq2-win-rate-season" class="team-card card-blue">
+                    <p id="iq2-point-season-number" class="label label-blue">0000F</p>
+                    <p id="iq2-point-season-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS SEASON</p>
+                </div>
+                <div id="iq2-win-rate-event" class="team-card card-blue">
+                    <p id="iq2-win-rate-event-number" class="label label-blue">0000F</p>
+                    <p id="iq2-win-rate-event-stat" class="value-stat">00%</p>
+                    <p class="value-desc desc-top bold">WIN RATE</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq2-hs-season" class="team-card card-blue">
+                    <p id="iq2-hs-season-number" class="label label-blue">0000F</p>
+                    <p id="iq2-hs-season-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p class="value-desc">THIS SEASON</p>
+                    <p id="iq2-hs-season-match" class="value-desc">MATCH NAME</p>
+                    <p id="iq2-hs-season-event" class="value-desc desc-bottom desc-top">EVENT NAME</p>
+                </div>
+                <div id="iq2-hs-event" class="team-card card-blue">
+                    <p id="iq2-hs-event-number" class="label label-blue">0000F</p>
+                    <p id="iq2-hs-event-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">HIGH SCORE</p>
+                    <p id="iq2-hs-event-match" class="value-desc">MATCH NAME</p>
+                    <p class="value-desc desc-bottom desc-top">THIS EVENT</p>
+                </div>
+                <div id="iq2-award-ex" class="team-card card-blue">
+                    <p id="iq2-award-ex-name" class="label label-blue">0000F</p>
+                    <p id="iq2-award-ex-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">EXCELLENCE</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="iq2-award-tc" class="team-card card-blue">
+                    <p id="iq2-award-tc-name" class="label label-blue">0000F</p>
+                    <p id="iq2-award-tc-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">TOURNAMENT CHAMPION</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+                <div id="iq2-award-rs" class="team-card card-blue">
+                    <p id="iq2-award-rs-name" class="label label-blue">0000F</p>
+                    <p id="iq2-award-rs-stat" class="value-stat">00</p>
+                    <p class="value-desc desc-top bold">ROBOT SKILLS</p>
+                    <p class="value-desc desc-bottom desc-top">AWARDS</p>
+                </div>
+            </div>
+        </div>
+        <script src="main.js" defer></script>
+    </body>
+</html>
