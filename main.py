@@ -245,6 +245,70 @@ def stat4(event, team1, team2, team3, team4):
     connection.close()
     return jsonify(response)
 
+# Return full statistics for two teams (typical V5RC match)
+@app.route("/stat/<int:event>/<int:team1>/<int:team2>")
+def stat2(event, team1, team2):
+    connection = database.connect(config["database"])
+    cursor = connection.cursor() 
+    response = {
+        "season": database.eventSeason(event, cursor),
+        "teams": {
+            "iq1": {
+                "team_name": database.teamName(team1, cursor),
+                "team_number": database.teamNumber(team1, cursor),
+                "team_robot": database.teamRobot(team1, cursor),
+                "team_grade": database.teamGrade(team1, cursor),
+                "team_organization": database.teamOrg(team1, cursor),
+                "team_city": database.teamCity(team1, cursor),
+                "team_region": database.teamRegion(team1, cursor),
+                "team_country": database.teamCountry(team1, cursor),
+                "points_total": database.teamPointTotal(team1, cursor),
+                "points_event": database.teamPointEvent(team1, event, cursor),
+                "points_avg_total": int(database.teamPointTotal(team1, cursor) / database.teamMatchTotal(team1, cursor)) if database.teamMatchTotal(team1, cursor) else 0,
+                "points_avg_event": int(database.teamPointEvent(team1, event, cursor) / database.teamMatchEvent(team1, event, cursor)) if database.teamMatchEvent(team1, event, cursor) else 0,
+                "matches_total": database.teamMatchTotal(team1, cursor),
+                "matches_event": database.teamMatchEvent(team1, event, cursor),
+                "wins_total": database.teamWinTotal(team1, cursor),
+                "wins_event": database.teamWinEvent(team1, event, cursor),
+                "wins_pct_total": int((database.teamWinTotal(team1, cursor) / database.teamMatchTotal(team1, cursor)) * 100) if database.teamMatchTotal(team1, cursor) else 0,
+                "wins_pct_event": int((database.teamWinEvent(team1, event, cursor) / database.teamMatchEvent(team1, event, cursor)) * 100) if database.teamMatchEvent(team1, event, cursor) else 0,
+                "team_hs_total": database.teamHSTotal(team1, cursor),
+                "team_hs_event": database.teamHSEvent(team1, event, cursor),
+                "team_hs_total_match": database.teamHSTotalMatch(team1, database.teamHSTotal(team1, cursor), cursor),
+                "team_hs_event_match": database.teamHSEventMatch(team1, event, database.teamHSEvent(team1, event, cursor), cursor),
+                "awards": database.awards(team1, cursor)
+            },
+            "iq2": {
+                "team_name": database.teamName(team2, cursor),
+                "team_number": database.teamNumber(team2, cursor),
+                "team_robot": database.teamRobot(team2, cursor),
+                "team_grade": database.teamGrade(team2, cursor),
+                "team_organization": database.teamOrg(team2, cursor),
+                "team_city": database.teamCity(team2, cursor),
+                "team_region": database.teamRegion(team2, cursor),
+                "team_country": database.teamCountry(team2, cursor),
+                "points_total": database.teamPointTotal(team2, cursor),
+                "points_event": database.teamPointEvent(team2, event, cursor),
+                "points_avg_total": int(database.teamPointTotal(team2, cursor) / database.teamMatchTotal(team2, cursor)) if database.teamMatchTotal(team2, cursor) else 0,
+                "points_avg_event": int(database.teamPointEvent(team2, event, cursor) / database.teamMatchEvent(team2, event, cursor)) if database.teamMatchEvent(team2, event, cursor) else 0,
+                "matches_total": database.teamMatchTotal(team2, cursor),
+                "matches_event": database.teamMatchEvent(team2, event, cursor),
+                "wins_total": database.teamWinTotal(team2, cursor),
+                "wins_event": database.teamWinEvent(team2, event, cursor),
+                "wins_pct_total": int((database.teamWinTotal(team2, cursor) / database.teamMatchTotal(team2, cursor)) * 100) if database.teamMatchTotal(team2, cursor) else 0,
+                "wins_pct_event": int((database.teamWinEvent(team2, event, cursor) / database.teamMatchEvent(team2, event, cursor)) * 100) if database.teamMatchEvent(team2, event, cursor) else 0,
+                "team_hs_total": database.teamHSTotal(team2, cursor),
+                "team_hs_event": database.teamHSEvent(team2, event, cursor),
+                "team_hs_total_match": database.teamHSTotalMatch(team2, database.teamHSTotal(team2, cursor), cursor),
+                "team_hs_event_match": database.teamHSEventMatch(team2, event, database.teamHSEvent(team2, event, cursor), cursor),
+                "awards": database.awards(team2, cursor)
+            }
+        }
+    }
+    cursor.close()
+    connection.close()
+    return jsonify(response)
+
 # Run app
 if __name__ == "__main__":
     connection = database.connect(config["database"])
