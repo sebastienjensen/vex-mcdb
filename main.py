@@ -68,16 +68,26 @@ def refresh(target):
         return f"Refreshed matches from {len(events)} events"
     
 # Return team IDs from team numbers and program
-@app.route("/teams/<int:program>/<string:team1>/<string:team2>/<string:team3>/<string:team4>")
+@app.route("/team/<int:program>/<string:team1>/<string:team2>/<string:team3>/<string:team4>")
 def retrieveID(program, team1, team2, team3, team4):
     connection = database.connect(config["database"])
     cursor = connection.cursor()
     response = {
-        1: database.team_ids(program, team1, cursor),
-        2: database.team_ids(program, team2, cursor),
-        3: database.team_ids(program, team3, cursor),
-        4: database.team_ids(program, team4, cursor)
+        1: database.teamID(program, team1, cursor),
+        2: database.teamID(program, team2, cursor),
+        3: database.teamID(program, team3, cursor),
+        4: database.teamID(program, team4, cursor)
     }
+    cursor.close()
+    connection.close()
+    return jsonify(response)
+
+# Return team IDs for a match
+@app.route("/match/<int:event>/<int:div>/<int:matchType>/<int:matchInst>/<int:matchNum>")
+def retrieveIDMatch(event, div, matchType, matchInst, matchNum):
+    connection = database.connect(config["database"])
+    cursor = connection.cursor()
+    response = database.teamIDMatch(event, div, matchType, matchInst, matchNum, cursor)
     cursor.close()
     connection.close()
     return jsonify(response)
