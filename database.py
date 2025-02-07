@@ -443,12 +443,12 @@ def teamCity(team, cursor):
     return cursor.fetchone()[0]
 
 # Return a team's region by ID
-def teamCity(team, cursor):
+def teamRegion(team, cursor):
     cursor.execute(f"SELECT team_region FROM team WHERE team_id = {team}")
     return cursor.fetchone()[0]
 
 # Return a team's country by ID
-def teamCity(team, cursor):
+def teamCountry(team, cursor):
     cursor.execute(f"SELECT team_country FROM team WHERE team_id = {team}")
     return cursor.fetchone()[0]
 
