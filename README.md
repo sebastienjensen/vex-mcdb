@@ -2,11 +2,17 @@
 
 MCDb interfaces with the RobotEvents API to surface team information and statistics, to supplement match introductions and commentary at VEX Robotics events (VEX IQ Robotics Competition and VEX Robotics Competition). It consists of the web server/API, which fetches and processes data from RobotEvents, and the web client, which makes requests to the server and presents data to the emcee.
 
-MCDb is programmed with Python and SQLite is used for its database. This is not exactly a performant combination, and at least a rewrite in a compiled language is planned. Nonetheless, MCDb has been tested with events with up to 64 teams.
+It has been tested with the UK event region with 1870 teams, 75 events (carrying 217 awards), and 3594 matches. When working at a larger scale, you might encounter rate limiting from the RobotEvents API. You may need to lengthen the delay between each request to the API to avoid this (see `database.py`).
+
+MCDb is programmed with Python and SQLite is used for its database. This is not exactly a performant combination, and at least a rewrite in a compiled language is planned. 
 
 ## Set up
 
-Because the database is stored locally, read/write access is required.
+Because the database is stored locally, read/write access is required. 
+
+Requirements can be found in `requirements.txt` and can be downloaded from/using pip.
+
+After completing the configuration file, you can run `main.py` and start requesting data from RobotEvents. This can be done either with the admin buttons at the bottom of the provided web client, or manually, using the web server routes documented at the bottom of the README.
 
 ### RobotEvents API
 
@@ -14,13 +20,33 @@ Access to the RobotEvents API is required. You can request access [here](https:/
 
 ### Configuration
 
-A `.env` file is used for configuring MCDb. Save it in the same directory as `main.py`.
+`config.json` is used for configuring MCDb. Create it according to the schema below and save it in the same directory as `main.py`.
+
+```
+{
+    "token": " ",
+    "season": [ ],
+    "program": [ ],
+    "region": " ",
+    "country": " ",
+    "database": " "
+}
+```
 
 |Key|Value|
 |---|---|
-|TOKEN|Your RobotEvents API access key|
+|`token`|Your RobotEvents API token|
+|`season`|Seasons to use by ID, most probably `[189, 190]`|
+|`program`|Programs to use by ID, most probably `[1, 41]`|
+|`region`|Event region to use, e.g., `"United Kingdom"`|
+|`country`|Team registration country to use (ISO 3166-2 alpha-2), e.g., `"GB"`|
+|`database`|Name of database file to use/create, e.g., `"mcdb.db"`|
+
+MCDb only supports one event region and country at a time, due to limitations with the RobotEvents API. This could be resolved by requesting teams, events, etc. from the API multiple times, once for each region or country, and so it may be incorporated in a future update (pull requests welcome!). In the meantime, MCDb may be incompatible for some events within countries where there is more than one event region.
 
 ## Database
+
+If you are looking to contribute or program your own web client, the following sections will help.
 
 The database is composed of eight tables, five of which are populated using the RobotEvents API. `config` is used to indicate whether the other tables have been created. `program` is only updated with the release of a new platform and `season` is only updated once per year. As such, their contents are hardcoded and copied to the database when it is created.
 
@@ -135,3 +161,19 @@ Match round, number, and instance can be confusing. Round refers to the match ty
 |5|Final (VEX V5 Robotics Competition)|
 |6|Round of 16|
 |15|Final (VEX IQ Robotics Competition)|
+
+## Routes
+
+The web server can be accessed via the following routes:
+
+|Route|Description|
+|---|---|
+|`/`|Index, can be used to externally verify whether the server is running|
+|`/refresh/<target>`|Use `event`, `award`, `team`, or `match` to refresh all data from the RobotEvents API, for that category, for your configured region or country|
+|`/refresh/event/<id>`|Refreshes match data for the specified event (ID, not SKU)|
+|`/event/<sku>`|Returns the event ID for the corresponding event SKU|
+|`/team/<program>/<team1>/<team2>/<team3>/<team4>`|Returns the team IDs for the corresponding team numbers, for the corresponding program|
+|`/match/<event>/<div>/<round>/<inst>/<num>`|Returns the team IDs for a specific match at an event (ID, not SKU)|
+|`/stat/<event>/<team>`|Returns statistics for one team (ID, not number) at an event (ID, not SKU)|
+|`/stat/<event>/<team1>/<team2>/<team3>/<team4>`|Returns statistics for four teams (IDs, not numbers) at an event (ID, not SKU), for a typical V5RC match|
+|`/stat/<event>/<team1>/<team2>`|Returns statistics for two teams (IDs, not numbers) at an event (ID, not SKU), for a typical VIQRC match|
