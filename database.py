@@ -217,6 +217,11 @@ def insert(table, data, connection):
     connection.commit()
     cursor.close()
 
+# Get an event's ID from SKU
+def eventID(sku, cursor):
+    cursor.execute(f"SELECT event_ID FROM event WHERE event_sku = {sku}")
+    return cursor.fetchone()[0]
+
 # Get an event's season
 def eventSeason(event, cursor):
     cursor.execute(f"SELECT event_season FROM event WHERE event_id = {event}")

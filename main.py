@@ -66,7 +66,17 @@ def refresh(target):
         cursor.close()
         connection.close()
         return f"Refreshed matches from {len(events)} events"
-    
+
+# Return event ID from SKU    
+@app.route("/event/<string:sku>")
+def retrieveEvent(sku):
+    connection = database.connect(config["database"])
+    cursor = connection.cursor()
+    response = database.eventID(sku, cursor)
+    cursor.close()
+    connection.close()
+    return jsonify(response)
+
 # Return team IDs from team numbers and program
 @app.route("/team/<int:program>/<string:team1>/<string:team2>/<string:team3>/<string:team4>")
 def retrieveID(program, team1, team2, team3, team4):
