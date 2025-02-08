@@ -67,6 +67,21 @@ def refresh(target):
         connection.close()
         return f"Refreshed matches from {len(events)} events"
 
+# Refresh match data by event
+@app.route("/refresh/event/<int:event>")
+def refreshEvent(event):
+    connection = database.connect(config["database"])
+    cursor = connection.cursor()
+    cursor.execute("SELECT event_divisions FROM event WHERE event_id = ?", (event,))
+    divisions = cursor.fetchone()[0]
+    # Fetch and insert matches from selected event
+    for division in range(1, divisions + 1):
+        matches = fetch.fetch(config, f"events/{event}/divisions/{division}/matches", {})
+        database.insert("match", matches, connection)
+    cursor.close()
+    connection.close()
+    return f"Refreshed matches"
+
 # Return event ID from SKU    
 @app.route("/event/<string:sku>")
 def retrieveEvent(sku):
