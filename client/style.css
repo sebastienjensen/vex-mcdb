@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --background-color: #fff;
+    --background-card: #eee;
+    --text-color: #000;
+    --v5: #d22630;
+    --iq: #0076bb;
+}
+
+body.dark {
+    --background-color: #000;
+    --background-card: #333;
+    --text-color: #fff;
+    --v5: #ff5c5c;
+    --iq: #5cadff;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'IBM Plex Sans', monospace;
+}
+
+#wrapper {
+    margin: 1em;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#title {
+    font-weight: 800;
+    font-size: 2em;
+    line-height: 0;
+    margin: 0;
+}
+
+.input-sku {
+    display: flex;
+    align-items: center;
+}
+
+.input-match {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+.sku {
+    flex: 1;
+    padding: 0.52em;
+    font-size: 0.75em;
+    border: 1px solid var(--text-color);
+    background-color: var(--background-color);
+    outline: none;
+    margin-right: 0.75em;
+    font-family: 'IBM Plex Sans', monospace;
+    color: var(--text-color);
+}
+
+.match-select {
+    flex: 1;
+    padding: 0.52em;
+    font-size: 0.75em;
+    border: 1px solid var(--text-color);
+    background-color: var(--background-color);
+    outline: none;
+    margin-right: 0.75em;
+    font-family: 'IBM Plex Sans', monospace;
+    width: 1em;
+    color: var(--text-color);
+}
+
+.card {
+    background-color: var(--background-card);
+    color: var(--text-color);
+    padding: 0.75em;
+    line-height: 0;
+    margin: 1em 0 0 0;
+}
+
+.team-cards {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75em;
+    padding: 0;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    color: var(--text-color);
+    padding: 0;
+    border: 0.25em solid;
+    text-align: center;
+}
+
+.card-red {
+    border-color: var(--v5);
+}
+
+.card-blue {
+    border-color: var(--iq);
+}
+
+.label {
+    line-height: 0;
+    margin: 0;
+    padding: 0.75em 0.25em 1em 0.25em;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--background-color);
+    letter-spacing: 0.05em;
+}
+
+.label-red {
+    background-color: var(--v5);
+}
+
+.label-blue {
+    background-color: var(--iq);
+}
+
+.value-name {
+    font-size: 1.5em;
+    font-weight: 800;
+    margin: 0;
+    padding: 0.35em 0.35em 0 0.35em;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.value-stat {
+    font-size: 2.5em;
+    font-weight: 800;
+    margin: 0;
+    padding: 0.2em 0.35em 0 0.35em;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.value-desc {
+    font-size: 0.75em;
+    font-weight: 400;
+    margin: 0;
+    padding: 0.2em 0.8em 0 0.8em;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.desc-top {
+    margin-top: 0.25em;
+}
+
+.desc-bottom {
+    margin-bottom: 0.8em;
+    margin-top: auto;
+}
+
+.divider {
+    border-top: 0.25em solid var(--background-card);
+    margin: 1em 0;
+}
+
+.button {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.75em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none;
+}
