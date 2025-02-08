@@ -63,6 +63,7 @@ body {
     outline: none;
     margin-right: 0.75em;
     font-family: 'IBM Plex Sans', monospace;
+    color: var(--text-color);
 }
 
 .match-select {
@@ -75,6 +76,7 @@ body {
     margin-right: 0.75em;
     font-family: 'IBM Plex Sans', monospace;
     width: 1em;
+    color: var(--text-color);
 }
 
 .card {
