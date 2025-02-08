@@ -219,12 +219,12 @@ def insert(table, data, connection):
 
 # Get an event's ID from SKU
 def eventID(sku, cursor):
-    cursor.execute(f"SELECT event_ID FROM event WHERE event_sku = {sku}")
+    cursor.execute(f"SELECT event_id FROM event WHERE event_sku = ?", (sku,))
     return cursor.fetchone()[0]
 
 # Get an event's season
 def eventSeason(event, cursor):
-    cursor.execute(f"SELECT event_season FROM event WHERE event_id = {event}")
+    cursor.execute(f"SELECT event_season FROM event WHERE event_id = ?", (event,))
     return cursor.fetchone()[0]
     
 # Return team ID from number and program
