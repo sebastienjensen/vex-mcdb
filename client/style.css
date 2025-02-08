@@ -43,13 +43,38 @@ body {
     margin: 0;
 }
 
-#theme {
-    background-color: var(--text-color);
-    color: var(--background-color);
-    border: none;
-    padding: 0.75em;
-    font-weight: 600;
-    cursor: pointer;
+.input-sku {
+    display: flex;
+    align-items: center;
+}
+
+.input-match {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+.sku {
+    flex: 1;
+    padding: 0.52em;
+    font-size: 0.75em;
+    border: 1px solid var(--text-color);
+    background-color: var(--background-color);
+    outline: none;
+    margin-right: 0.75em;
+    font-family: 'IBM Plex Sans', monospace;
+}
+
+.match-select {
+    flex: 1;
+    padding: 0.52em;
+    font-size: 0.75em;
+    border: 1px solid var(--text-color);
+    background-color: var(--background-color);
+    outline: none;
+    margin-right: 0.75em;
+    font-family: 'IBM Plex Sans', monospace;
+    width: 1em;
 }
 
 .card {
@@ -148,6 +173,15 @@ body {
 .divider {
     border-top: 0.25em solid var(--background-card);
     margin: 1em 0;
+}
+
+.button {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.75em;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .button:hover {
