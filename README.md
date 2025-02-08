@@ -124,7 +124,7 @@ The database file can be deleted whenever MCDb is not running and it will be rec
 |`match_score_red`|Integer||
 |`match_score_blue`|Integer||
 
-Match round, number, and instance can be confusing. Round refers to the match type; see below. Number refers to the match number within that round (e.g., 'Qualification 15'). Instance is used only within elimination brackets (e.g., 'Quarterfinal 1-2', where the second number is its instance).
+Match round, number, and instance can be confusing. Round refers to the match type; see below. Number refers to the match number within that round (e.g., 'Qualification 15'). Instance is used only within elimination brackets (e.g., 'Quarterfinal 1-2', where the first number is its instance).
 
 |Round|Match type|
 |---|---|
