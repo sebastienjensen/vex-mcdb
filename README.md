@@ -4,7 +4,7 @@ MCDb interfaces with the RobotEvents API to surface team information and statist
 
 It has been tested with the UK event region with 1870 teams, 75 events (carrying 217 awards), and 3594 matches. When working at a larger scale, you might encounter rate limiting from the RobotEvents API. You may need to lengthen the delay between each request to the API to avoid this (see `database.py`).
 
-MCDb is programmed with Python and SQLite is used for its database. This is not exactly a performant combination, and at least a rewrite in a compiled language is planned. 
+The MCDb server is programmed with Python and SQLite is used for its database. This is not exactly a performant combination, and at least a rewrite in a compiled language is planned. The provided web client uses JavaScript.
 
 ## Set up
 

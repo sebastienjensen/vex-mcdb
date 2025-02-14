@@ -71,6 +71,7 @@ def refresh(target):
 @app.route("/refresh/event/<int:event>")
 def refreshEvent(event):
     connection = database.connect(config["database"])
+    database.deleteEventMatches(event, connection)
     cursor = connection.cursor()
     cursor.execute("SELECT event_divisions FROM event WHERE event_id = ?", (event,))
     divisions = cursor.fetchone()[0]
