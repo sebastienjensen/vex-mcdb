@@ -217,6 +217,13 @@ def insert(table, data, connection):
     connection.commit()
     cursor.close()
 
+# Delete all matches from an event to prevent duplication
+def deleteEventMatches(event, connection):
+    cursor = connection.cursor()
+    cursor.execute("DELETE FROM match WHERE match_event = ?", (event,))
+    connection.commit()
+    cursor.close()
+
 # Get an event's ID from SKU
 def eventID(sku, cursor):
     cursor.execute(f"SELECT event_id FROM event WHERE event_sku = ?", (sku,))
