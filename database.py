@@ -76,6 +76,7 @@ def initialize(connection):
             event_city STRING,
             event_season INTEGER,
             event_divisions INTEGER,
+            event_date STRING,
             FOREIGN KEY (event_season) REFERENCES season(season_id)
         )
         """
@@ -180,9 +181,9 @@ def insert(table, data, connection):
         for event in data:
             cursor.execute(
                 """
-                INSERT OR REPLACE INTO event (event_id, event_sku, event_name, event_city, event_season, event_divisions)
-                VALUES (?, ?, ?, ?, ?, ?)
-                """, (event["id"], event["sku"], event["name"], event["location"]["city"], event["season"]["id"], len(event["divisions"]))
+                INSERT OR REPLACE INTO event (event_id, event_sku, event_name, event_city, event_season, event_divisions, event_date)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                """, (event["id"], event["sku"], event["name"], event["location"]["city"], event["season"]["id"], len(event["divisions"]), event["start"])
             )
     elif table == "team":
         # Iterate through teams and insert data
