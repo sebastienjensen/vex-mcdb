@@ -123,6 +123,23 @@ def initialize(connection):
     )
     connection.commit()
 
+    # skills
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS skills (
+            skills_id INTEGER PRIMARY KEY,
+            skills_event INTEGER,
+            skills_team INTEGER,
+            skills_type STRING,
+            skills_score INTEGER,
+            skills_attempts INTEGER,
+            FOREIGN KEY (skills_event) REFERENCES event(event_id),
+            FOREIGN KEY (skills_team) REFERENCES team(team_id)
+        )
+        """
+    )
+    connection.commit()
+
     # season, program
     # Inserts data without fetching from RE API
     cursor.execute(
@@ -213,6 +230,15 @@ def insert(table, data, connection):
                 INSERT OR REPLACE INTO match (match_id, match_event, match_division, match_name, match_number, match_instance, match_round, match_season, match_team_red_1, match_team_red_2, match_team_blue_1, match_team_blue_2, match_score_red, match_score_blue)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (match["id"], event, match["division"]["id"], match["name"], match["matchnum"], match["instance"], match["round"], season, red1, red2, blue1, blue2, match["alliances"][1]["score"], match["alliances"][0]["score"])
+            )
+    elif table == "skills":
+        # Iterate through skills and insert data
+        for skills in data:
+            cursor.execute(
+                """
+                INSERT OR REPLACE INTO skills (skills_id, skills_event, skills_team, skills_type, skills_score, skills_attempts)
+                VALUES (?, ?, ?, ?, ?, ?)
+                """, (skills["id"], skills["event"]["id"], skills["team"]["id"], skills["type"], skills["score"], skills["attempts"])
             )
     connection.commit()
     cursor.close()
