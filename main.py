@@ -33,7 +33,7 @@ def refresh(target):
     # Fetch and submit team data for insertion
     elif target == "team":
         connection = database.connect(config["database"])
-        teams = fetch.fetch(config, "teams", {"country": config["country"], "program[]": config["program"]})
+        teams = fetch.fetch(config, "teams", {"country": config["country"], "program[]": config["program"], "registered": True})
         database.insert("team", teams, connection)
         connection.close()
         return f"Refreshed {len(teams)} teams"
@@ -66,6 +66,19 @@ def refresh(target):
         cursor.close()
         connection.close()
         return f"Refreshed matches from {len(events)} events"
+    elif target == "skills":
+        connection = database.connect(config["database"])
+        # Retrieve list of known events
+        cursor = connection.cursor()
+        cursor.execute("SELECT event_id FROM event")
+        events = cursor.fetchall()
+        # Fetch and insert skills from all known events
+        for event in events:
+            skills = fetch.fetch(config, f"events/{event[0]}/skills", {})
+            database.insert("skills", skills, connection)
+        cursor.close()
+        connection.close()
+        return f"Refreshed skills from {len(events)} events"
 
 # Refresh match data by event
 @app.route("/refresh/event/<int:event>")
